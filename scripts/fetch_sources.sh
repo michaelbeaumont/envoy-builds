@@ -62,4 +62,6 @@ patches=${patches_per_version["v${major}.${minor}"]}
 read -ra patches <<< "${patches}"
 git apply -v "${patches[@]}"
 
+git revert :/'grpc: propagate tracing headers when using google grpc streams \(#34395\)' || true
+
 popd
